@@ -66,31 +66,31 @@
             //// ======== TASK 3 ========
             //int[] numbers = { 2, 9, 18, 952, 1000, 4, 7, 63, 14, 5 };
 
-            //Int128 d = numbers.Aggregate((Int128)1, (acc, next) => acc * next);
+            //Int128 d = numbers.AsParallel().Aggregate((Int128)1, (acc, next) => acc * next);
             //Console.WriteLine(d);
 
-            //int count = numbers.Count();
+            //int count = numbers.AsParallel().Count();
             //Console.WriteLine(count);
 
-            //int count9 = numbers.Count(n => n % 9 == 0);
+            //int count9 = numbers.AsParallel().Count(n => n % 9 == 0);
             //Console.WriteLine(count9);
 
-            //int count7_945 = numbers.Count(n => n % 7 == 0 && n > 945);
+            //int count7_945 = numbers.AsParallel().Count(n => n % 7 == 0 && n > 945);
             //Console.WriteLine(count7_945);
 
-            //int sum = numbers.Sum();
+            //int sum = numbers.AsParallel().Sum();
             //Console.WriteLine(sum);
 
-            //int sumEven = numbers.Where(n => n % 2 == 0).Sum();
+            //int sumEven = numbers.AsParallel().Where(n => n % 2 == 0).Sum();
             //Console.WriteLine(sumEven);
 
-            //int min = numbers.Min();
+            //int min = numbers.AsParallel().Min();
             //Console.WriteLine(min);
 
-            //int max = numbers.Max();
+            //int max = numbers.AsParallel().Max();
             //Console.WriteLine(max);
 
-            //double avarage = numbers.Average();
+            //double avarage = numbers.AsParallel().Average();
             //Console.WriteLine(avarage);
 
 
@@ -99,11 +99,13 @@
             //// ======== TASK 4 ========
             //int[] numbers = { 2, 9, 18, 952, 1000, 4, 7, 63, 14, 5 };
 
-            //var res1 = numbers.OrderDescending()
+            //var res1 = numbers.AsParallel()
+            //                  .OrderDescending()
             //                  .Take(3);
             //Print(res1);
 
-            //var res2 = numbers.Order()
+            //var res2 = numbers.AsParallel()
+            //                  .Order()
             //                  .Take(3);
             //Print(res2);
 
@@ -114,7 +116,8 @@
             //// ======== TASK 5 ========
             //int[] numbers = { 2, 9, 18, 952, 1000, 4, 7, 63, 14, 5 };
 
-            //var res1 = numbers.GroupBy(x => x)
+            //var res1 = numbers.AsParallel()
+            //                  .GroupBy(x => x)
             //                  .Select(x => new { Number = x.Key, Count = x.Count() });
 
             //foreach (var item in res1)
@@ -124,7 +127,8 @@
             //Console.WriteLine();
 
 
-            //var res2 = numbers.Where(x => x % 2 == 0)
+            //var res2 = numbers.AsParallel()
+            //                  .Where(x => x % 2 == 0)
             //                  .GroupBy(x => x)
             //                  .Select(x => new { Number = x.Key, Count = x.Count() });
 
@@ -135,7 +139,8 @@
             //Console.WriteLine();
 
 
-            //var res3 = numbers.GroupBy(x => x % 2 == 0 ? "парні" : "непарні")
+            //var res3 = numbers.AsParallel()
+            //                  .GroupBy(x => x % 2 == 0 ? "парні" : "непарні")
             //                  .Select(g => new { Category = g.Key, Count = g.Count() });
 
             //foreach (var item in res3)
